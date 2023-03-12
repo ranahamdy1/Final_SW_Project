@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/shared_screen.dart';
+
 class FeedbackScreen extends StatefulWidget {
   const FeedbackScreen({Key? key}) : super(key: key);
 
@@ -12,7 +14,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xff37d461),
+        backgroundColor: greenColor,
       ),
       body: Center(
         child: Container(
@@ -22,7 +24,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                 context: context, builder: (context) => const FeedBackDialog());
           },
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(const Color(0xff37d461)),
+            backgroundColor: MaterialStateProperty.all(greenColor),
             padding: MaterialStateProperty.all(
                 const EdgeInsets.symmetric(horizontal: 70, vertical: 10)),
             shape: MaterialStateProperty.all(RoundedRectangleBorder(
@@ -58,7 +60,7 @@ class _FeedBackDialogState extends State<FeedBackDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: const Color(0xff37d461),
+      backgroundColor: greenColor,
       content: Form(
         key: _formKey,
         child: TextFormField(

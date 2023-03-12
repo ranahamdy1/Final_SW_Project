@@ -3,10 +3,17 @@ import 'package:flutter/material.dart';
 class DataSearch extends SearchDelegate {
   List diseases = [
     "diabetes",
+    "kidney disease",
+    "gastritis",
     "heart disease",
     "cancer",
     "chronic respiratory diseases"
   ];
+
+  List screens = [
+    {"image": "assets/images/13.jpeg"}
+  ];
+
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
@@ -14,7 +21,7 @@ class DataSearch extends SearchDelegate {
           onPressed: () {
             query = '';
           },
-          icon: Icon(Icons.close))
+          icon: const Icon(Icons.close))
     ];
   }
 
@@ -24,12 +31,12 @@ class DataSearch extends SearchDelegate {
         onPressed: () {
           close(context, null);
         },
-        icon: Icon(Icons.arrow_back));
+        icon: const Icon(Icons.arrow_back));
   }
 
   @override
   Widget buildResults(BuildContext context) {
-    return Text("$query");
+    return Text(query);
   }
 
   @override

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/shared_screen.dart';
+
 class ReminderScreen extends StatefulWidget {
   const ReminderScreen({Key? key}) : super(key: key);
 
@@ -27,9 +29,9 @@ class _ReminderScreenState extends State<ReminderScreen> {
                   style: TextStyle(fontSize: 33),
                 ),
                 const SizedBox(height: 12),
-                const Text(
+                Text(
                   "Title Of The Reminder",
-                  style: TextStyle(fontSize: 20, color: Color(0xff37d461)),
+                  style: TextStyle(fontSize: 20, color: greenColor),
                 ),
                 const SizedBox(height: 12),
                 Padding(
@@ -43,7 +45,7 @@ class _ReminderScreenState extends State<ReminderScreen> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
-                        style: const TextStyle(color: Color(0xff37d461)),
+                        style: TextStyle(color: greenColor),
                         onChanged: (value) {},
                         decoration: const InputDecoration(
                           border: InputBorder.none,
@@ -53,9 +55,9 @@ class _ReminderScreenState extends State<ReminderScreen> {
                   ),
                 ),
                 const SizedBox(height: 12),
-                const Text(
+                Text(
                   "description",
-                  style: TextStyle(fontSize: 20, color: Color(0xff37d461)),
+                  style: TextStyle(fontSize: 20, color: greenColor),
                 ),
                 const SizedBox(height: 12),
                 Padding(
@@ -71,7 +73,7 @@ class _ReminderScreenState extends State<ReminderScreen> {
                       child: TextField(
                         minLines: 5,
                         maxLines: 10,
-                        style: const TextStyle(color: Color(0xff37d461)),
+                        style: TextStyle(color: greenColor),
                         onChanged: (value) {},
                         decoration: const InputDecoration(
                           border: InputBorder.none,
@@ -81,9 +83,9 @@ class _ReminderScreenState extends State<ReminderScreen> {
                   ),
                 ),
                 const SizedBox(height: 12),
-                const Text(
+                Text(
                   "Date",
-                  style: TextStyle(fontSize: 20, color: Color(0xff37d461)),
+                  style: TextStyle(fontSize: 20, color: greenColor),
                 ),
                 const SizedBox(height: 12),
                 Padding(
@@ -97,7 +99,7 @@ class _ReminderScreenState extends State<ReminderScreen> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
-                        style: const TextStyle(color: Color(0xff37d461)),
+                        style: TextStyle(color: greenColor),
                         onChanged: (value) {},
                         decoration: const InputDecoration(
                           border: InputBorder.none,
@@ -107,9 +109,9 @@ class _ReminderScreenState extends State<ReminderScreen> {
                   ),
                 ),
                 const SizedBox(height: 12),
-                const Text(
+                Text(
                   "Time",
-                  style: TextStyle(fontSize: 20, color: Color(0xff37d461)),
+                  style: TextStyle(fontSize: 20, color: greenColor),
                 ),
                 const SizedBox(height: 12),
                 Padding(
@@ -123,7 +125,7 @@ class _ReminderScreenState extends State<ReminderScreen> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
-                        style: const TextStyle(color: Color(0xff37d461)),
+                        style: TextStyle(color: greenColor),
                         onChanged: (value) {},
                         decoration: const InputDecoration(
                           border: InputBorder.none,
@@ -133,9 +135,9 @@ class _ReminderScreenState extends State<ReminderScreen> {
                   ),
                 ),
                 const SizedBox(height: 12),
-                const Text(
+                Text(
                   "Delay",
-                  style: TextStyle(fontSize: 20, color: Color(0xff37d461)),
+                  style: TextStyle(fontSize: 20, color: greenColor),
                 ),
                 const SizedBox(height: 12),
                 Padding(
@@ -149,7 +151,7 @@ class _ReminderScreenState extends State<ReminderScreen> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
-                        style: const TextStyle(color: Color(0xff37d461)),
+                        style: TextStyle(color: greenColor),
                         onChanged: (value) {},
                         decoration: const InputDecoration(
                           border: InputBorder.none,
@@ -162,8 +164,7 @@ class _ReminderScreenState extends State<ReminderScreen> {
                 ElevatedButton(
                   onPressed: () async {},
                   style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all(const Color(0xff37d461)),
+                    backgroundColor: MaterialStateProperty.all(greenColor),
                     padding: MaterialStateProperty.all(
                         const EdgeInsets.symmetric(
                             horizontal: 110, vertical: 10)),

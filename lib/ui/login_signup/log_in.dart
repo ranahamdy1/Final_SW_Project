@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sw_project1/ui/login_signup/sign_up.dart';
+import '../../shared/shared_screen.dart';
 import '../main_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -30,12 +31,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(
                   height: 10,
                 ),
-                const Text(
+                Text(
                   "LogIn",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 24,
-                      color: Color(0xff37d461)),
+                      color: greenColor),
                 ),
                 const SizedBox(
                   height: 10,
@@ -125,8 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     }
                   },
                   style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all(const Color(0xff37d461)),
+                    backgroundColor: MaterialStateProperty.all(greenColor),
                     padding: MaterialStateProperty.all(
                         const EdgeInsets.symmetric(
                             horizontal: 79, vertical: 10)),
@@ -150,10 +150,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             MaterialPageRoute(
                                 builder: (context) => const SignUpScreen()));
                       },
-                      child: const Text(" SignUP",
+                      child: Text(" SignUP",
                           style: TextStyle(
-                              color: Color(0xff37d461),
-                              fontWeight: FontWeight.bold)),
+                              color: greenColor, fontWeight: FontWeight.bold)),
                     ),
                   ],
                 )

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/shared_screen.dart';
+
 class CaloriesScreen extends StatefulWidget {
   const CaloriesScreen({Key? key}) : super(key: key);
 
@@ -21,7 +23,7 @@ class _CaloriesScreenState extends State<CaloriesScreen> {
         appBar: AppBar(
           title: const Text("Calories Calculator"),
           elevation: 0.0,
-          backgroundColor: const Color(0xff37d461),
+          backgroundColor: greenColor,
           actions: [
             IconButton(onPressed: () {}, icon: const Icon(Icons.settings))
           ],
@@ -67,7 +69,7 @@ class _CaloriesScreenState extends State<CaloriesScreen> {
                       calculateCaloriesWoman(weight);
                     },
                     child: Container(
-                      color: const Color(0xff37d461),
+                      color: greenColor,
                       child: const Center(
                         child: Text(
                           "calculate as a woman",
@@ -87,7 +89,7 @@ class _CaloriesScreenState extends State<CaloriesScreen> {
                       calculateCaloriesMan(weight);
                     },
                     child: Container(
-                      color: const Color(0xff37d461),
+                      color: greenColor,
                       child: const Center(
                         child: Text(
                           "calculate as a man",

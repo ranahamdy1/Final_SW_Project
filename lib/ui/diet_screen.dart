@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../shared/shared_screen.dart';
 import 'articles/diet/gain_weight.dart';
 import 'articles/diet/lose_weight.dart';
 
@@ -28,8 +29,7 @@ class _DietScreenState extends State<DietScreen> {
                   );
                 },
                 style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(const Color(0xff37d461)),
+                  backgroundColor: MaterialStateProperty.all(greenColor),
                   padding: MaterialStateProperty.all(
                       const EdgeInsets.symmetric(horizontal: 90, vertical: 20)),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
@@ -50,8 +50,7 @@ class _DietScreenState extends State<DietScreen> {
                   );
                 },
                 style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(const Color(0xff37d461)),
+                  backgroundColor: MaterialStateProperty.all(greenColor),
                   padding: MaterialStateProperty.all(
                       const EdgeInsets.symmetric(horizontal: 90, vertical: 20)),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(

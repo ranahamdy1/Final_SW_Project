@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/shared_screen.dart';
+
 class AboutUsScreen extends StatefulWidget {
   const AboutUsScreen({Key? key}) : super(key: key);
 
@@ -12,17 +14,17 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color(0xff37d461),
+          backgroundColor: greenColor,
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               Text(
                 "About Us",
-                style: TextStyle(color: Color(0xff37d461), fontSize: 40),
+                style: TextStyle(color: greenColor, fontSize: 40),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
             ],
           ),
         ));

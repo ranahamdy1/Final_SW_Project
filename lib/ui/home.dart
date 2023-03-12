@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
+import '../shared/shared_screen.dart';
 import 'bmi/bmi_screen.dart';
 import 'chronic_diseases/chronic_diseases_screen.dart';
 import 'diet_screen.dart';
@@ -48,6 +49,25 @@ class _Home1ScreenState extends State<Home1Screen> {
             const SizedBox(height: 32),
             InkWell(
               onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const BmiScreen()));
+              },
+              child: Container(
+                width: 250,
+                height: 170,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: greenColor,
+                ),
+                child: Center(
+                    child: Text("BMI",
+                        style:
+                            TextStyle(color: Colors.grey[200], fontSize: 60))),
+              ),
+            ),
+            const SizedBox(height: 32),
+            InkWell(
+              onTap: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -60,29 +80,9 @@ class _Home1ScreenState extends State<Home1Screen> {
                   borderRadius: BorderRadius.circular(30),
                   color: Colors.grey[200],
                 ),
-                child: const Center(
-                    child: Text("Diet",
-                        style:
-                            TextStyle(color: Color(0xff37d461), fontSize: 60))),
-              ),
-            ),
-            const SizedBox(height: 32),
-            InkWell(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const BmiScreen()));
-              },
-              child: Container(
-                width: 250,
-                height: 170,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: Color(0xff37d461),
-                ),
                 child: Center(
-                    child: Text("BMI",
-                        style:
-                            TextStyle(color: Colors.grey[200], fontSize: 60))),
+                    child: Text("Diet",
+                        style: TextStyle(color: greenColor, fontSize: 60))),
               ),
             ),
             const SizedBox(height: 32),
@@ -98,12 +98,12 @@ class _Home1ScreenState extends State<Home1Screen> {
                 height: 170,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  color: Colors.grey[200],
+                  color: greenColor,
                 ),
-                child: const Center(
+                child: Center(
                     child: Text("Calories",
                         style:
-                            TextStyle(color: Color(0xff37d461), fontSize: 60))),
+                            TextStyle(color: Colors.grey[100], fontSize: 60))),
               ),
             ),
             const SizedBox(height: 32),
@@ -119,12 +119,11 @@ class _Home1ScreenState extends State<Home1Screen> {
                 height: 170,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  color: const Color(0xff37d461),
+                  color: Colors.grey[200],
                 ),
                 child: Center(
                     child: Text("Chronic Diseases",
-                        style:
-                            TextStyle(color: Colors.grey[100], fontSize: 30))),
+                        style: TextStyle(color: greenColor, fontSize: 30))),
               ),
             ),
           ],
@@ -135,8 +134,7 @@ class _Home1ScreenState extends State<Home1Screen> {
 
   Widget buildIndicator() {
     return AnimatedSmoothIndicator(
-        effect: const ExpandingDotsEffect(
-            dotWidth: 15, activeDotColor: Color(0xff37d461)),
+        effect: ExpandingDotsEffect(dotWidth: 15, activeDotColor: greenColor),
         activeIndex: activeIndex,
         count: urlImages.length);
   }

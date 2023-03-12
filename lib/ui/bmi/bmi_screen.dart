@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/shared_screen.dart';
+import 'factory_pmi.dart';
+
 class BmiScreen extends StatefulWidget {
   const BmiScreen({Key? key}) : super(key: key);
 
@@ -18,12 +21,16 @@ class _BmiScreenState extends State<BmiScreen> {
 
   @override
   Widget build(BuildContext context) {
+    /*Bmi x = Bmi(result); //lllll
+    x.bmiCalc();
+    print(x);*/
+
     return Container(
       child: Scaffold(
         appBar: AppBar(
           title: const Text("BMI Calculator"),
           elevation: 0.0,
-          backgroundColor: const Color(0xff37d461),
+          backgroundColor: greenColor,
           actions: [
             IconButton(onPressed: () {}, icon: const Icon(Icons.settings))
           ],
@@ -90,7 +97,7 @@ class _BmiScreenState extends State<BmiScreen> {
                         calculateBmi(height, weight);
                       },
                       child: Container(
-                        color: const Color(0xff37d461),
+                        color: greenColor,
                         child: const Center(
                           child: Text(
                             "calculate",
@@ -119,7 +126,17 @@ class _BmiScreenState extends State<BmiScreen> {
                       style: const TextStyle(
                           fontSize: 40.0, fontWeight: FontWeight.bold),
                     ),
-                  )
+                  ),
+                  //lllll
+                  /*SizedBox(
+                    width: double.infinity,
+                    child: Text(
+                      x,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                          fontSize: 40.0, fontWeight: FontWeight.bold),
+                    ),
+                  )*/
                 ],
               ),
             ),

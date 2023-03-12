@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/shared_screen.dart';
+
 class ExercisesScreen extends StatefulWidget {
   const ExercisesScreen({Key? key}) : super(key: key);
 
@@ -8,85 +10,34 @@ class ExercisesScreen extends StatefulWidget {
 }
 
 class _ExercisesScreenScreenState extends State<ExercisesScreen> {
+  List exercises = [
+    {"image": "assets/images/7.jpeg"},
+    {"image": "assets/images/9.jpeg"},
+    {"image": "assets/images/10.jpg"},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xff37d461),
+        backgroundColor: greenColor,
       ),
-      body: Container(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(height: 22),
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  width: 450,
-                  height: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.grey[300],
-                  ),
-                  child: Center(child: Image.asset("assets/images/7.jpeg")),
-                ),
+      body: ListView.builder(
+        itemCount: exercises.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: Container(
+              width: 450,
+              height: 200,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: Colors.grey[300],
               ),
-              const SizedBox(height: 22),
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  width: 450,
-                  height: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.grey[300],
-                  ),
-                  child: Center(child: Image.asset("assets/images/9.jpeg")),
-                ),
-              ),
-              const SizedBox(height: 22),
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  width: 450,
-                  height: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.grey[300],
-                  ),
-                  child: Center(child: Image.asset("assets/images/10.jpg")),
-                ),
-              ),
-              const SizedBox(height: 22),
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  width: 450,
-                  height: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.grey[300],
-                  ),
-                  child: Center(child: Image.asset("assets/images/7.jpeg")),
-                ),
-              ),
-              const SizedBox(height: 22),
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  width: 450,
-                  height: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.grey[300],
-                  ),
-                  child: Center(child: Image.asset("assets/images/9.jpeg")),
-                ),
-              ),
-              const SizedBox(height: 22),
-            ],
-          ),
-        ),
+              child: Center(child: Image.asset(exercises[index]["image"]!)),
+            ),
+          );
+        },
       ),
     );
   }

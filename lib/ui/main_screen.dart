@@ -1,6 +1,7 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import '../shared/shared_screen.dart';
 import 'articles/articles_screen.dart';
-import 'chronic_diseases/chronic_diseases_screen.dart';
 import 'diet_screen.dart';
 import 'drawer/darwer_screen.dart';
 import 'home.dart';
@@ -12,6 +13,18 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  @override
+  void initState() {
+    super.initState();
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      print("onMessage $message");
+      final snackBar =
+          SnackBar(content: Text(message.notification?.title ?? ""));
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    });
+    super.initState();
+  }
+
   int currentIndex = 0;
   var page = PageController();
   var screens = const [
@@ -28,13 +41,13 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xff37d461),
+        backgroundColor: greenColor,
         title: Text(
           titleBar[currentIndex],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: const Color(0xff37d461),
+        selectedItemColor: greenColor,
         onTap: (index) {
           setState(() {});
           currentIndex = index;

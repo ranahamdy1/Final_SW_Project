@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sw_project1/ui/articles/water_screen.dart';
 
+import '../../shared/shared_screen.dart';
 import '../diet_screen.dart';
+import 'Daily_recommended_foods.dart';
 import 'diet/gain_weight.dart';
 import 'diet/lose_weight.dart';
 import 'food.dart';
@@ -15,6 +17,16 @@ class ArticleScreen extends StatefulWidget {
 }
 
 class _ArticleScreenState extends State<ArticleScreen> {
+  List elevatedButton = [
+    {"name": "Food", "screens": FoodScreen()},
+    {"name": "water", "screens": WaterScreen()},
+    {"name": "General Tips", "screens": GeneralTipsScreen()},
+    {"name": "Diet", "screens": DietScreen()},
+    {"name": "Lose Weight", "screens": LoseWeightScreen()},
+    {"name": "Gain Weight", "screens": GainWeightScreen()},
+    {"name": "Daily Recommended Foods", "screens": DailyRecommendedFoods()},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,205 +37,34 @@ class _ArticleScreenState extends State<ArticleScreen> {
         ),*/
         body: Center(
       child: Container(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(height: 52),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const FoodScreen()),
-                  );
-                },
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(const Color(0xff37d461)),
-                  padding: MaterialStateProperty.all(
-                      const EdgeInsets.symmetric(horizontal: 90, vertical: 20)),
-                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(27))),
-                ),
-                child: const Text(
-                  "Food",
-                  style: TextStyle(fontSize: 24),
-                ),
-              ),
-              const SizedBox(height: 52),
-              ElevatedButton(
+        child: ListView.builder(
+          itemCount: elevatedButton.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const WaterScreen()),
+                        builder: (context) =>
+                            elevatedButton[index]["screens"]!),
                   );
                 },
                 style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(const Color(0xff37d461)),
-                  padding: MaterialStateProperty.all(
-                      const EdgeInsets.symmetric(horizontal: 90, vertical: 20)),
-                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(27))),
-                ),
-                child: const Text(
-                  "water",
-                  style: TextStyle(fontSize: 24),
-                ),
-              ),
-              const SizedBox(height: 52),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const GeneralTipsScreen()),
-                  );
-                },
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(const Color(0xff37d461)),
-                  padding: MaterialStateProperty.all(
-                      const EdgeInsets.symmetric(horizontal: 66, vertical: 20)),
-                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(27))),
-                ),
-                child: const Text(
-                  "General Tips",
-                  style: TextStyle(fontSize: 22),
-                ),
-              ),
-              const SizedBox(height: 52),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const DietScreen()),
-                  );
-                },
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(const Color(0xff37d461)),
-                  padding: MaterialStateProperty.all(
-                      const EdgeInsets.symmetric(horizontal: 90, vertical: 20)),
-                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(27))),
-                ),
-                child: const Text(
-                  "Diet",
-                  style: TextStyle(fontSize: 24),
-                ),
-              ),
-              const SizedBox(height: 52),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const FoodScreen()),
-                  );
-                },
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(const Color(0xff37d461)),
-                  padding: MaterialStateProperty.all(
-                      const EdgeInsets.symmetric(horizontal: 90, vertical: 20)),
-                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(27))),
-                ),
-                child: const Text(
-                  "Food",
-                  style: TextStyle(fontSize: 24),
-                ),
-              ),
-              const SizedBox(height: 52),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const LoseWeightScreen()),
-                  );
-                },
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(const Color(0xff37d461)),
+                  backgroundColor: MaterialStateProperty.all(greenColor),
                   padding: MaterialStateProperty.all(
                       const EdgeInsets.symmetric(horizontal: 60, vertical: 20)),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(27))),
                 ),
-                child: const Text(
-                  "Lose Weight",
+                child: Text(
+                  elevatedButton[index]["name"],
                   style: TextStyle(fontSize: 24),
                 ),
               ),
-              const SizedBox(height: 52),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const GainWeightScreen()),
-                  );
-                },
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(const Color(0xff37d461)),
-                  padding: MaterialStateProperty.all(
-                      const EdgeInsets.symmetric(horizontal: 60, vertical: 20)),
-                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(27))),
-                ),
-                child: const Text(
-                  "Gain Weight",
-                  style: TextStyle(fontSize: 24),
-                ),
-              ),
-              const SizedBox(height: 52),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const FoodScreen()),
-                  );
-                },
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(const Color(0xff37d461)),
-                  padding: MaterialStateProperty.all(
-                      const EdgeInsets.symmetric(horizontal: 90, vertical: 20)),
-                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(27))),
-                ),
-                child: const Text(
-                  "Food",
-                  style: TextStyle(fontSize: 24),
-                ),
-              ),
-              const SizedBox(height: 52),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const FoodScreen()),
-                  );
-                },
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(const Color(0xff37d461)),
-                  padding: MaterialStateProperty.all(
-                      const EdgeInsets.symmetric(horizontal: 90, vertical: 20)),
-                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(27))),
-                ),
-                child: const Text(
-                  "Food",
-                  style: TextStyle(fontSize: 24),
-                ),
-              ),
-              const SizedBox(height: 52),
-            ],
-          ),
+            );
+          },
         ),
       ),
     ));

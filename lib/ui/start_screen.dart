@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../shared/shared_screen.dart';
 import 'login_signup/log_in.dart';
 
 class StartScreen extends StatelessWidget {
@@ -8,12 +9,12 @@ class StartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color(0xff37d461),
+              greenColor,
               //Color(0xff9e3609),
-              Color(0xffc3c9c5),
+              const Color(0xffc3c9c5),
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -23,7 +24,7 @@ class StartScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset("assets/images/start.png"),
+              Image.asset("assets/images/20.png"),
               const SizedBox(
                 height: 50,
               ),
@@ -37,10 +38,10 @@ class StartScreen extends StatelessWidget {
                 },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
-                    const Color(0xffc3c9c5),
+                    greenColor,
                   ),
                   padding: MaterialStateProperty.all(
-                      const EdgeInsets.symmetric(horizontal: 79, vertical: 10)),
+                      const EdgeInsets.symmetric(horizontal: 66, vertical: 10)),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(27))),
                 ),
@@ -49,7 +50,7 @@ class StartScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xff37d461),
+                    //color: Color(0xff186909),
                   ),
                 ),
               ),

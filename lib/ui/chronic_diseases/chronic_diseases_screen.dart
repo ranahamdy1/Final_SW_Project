@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:sw_project1/ui/chronic_diseases/search/search_screen.dart';
 
+import '../../shared/shared_screen.dart';
+import 'diseases/Diabetes_screen.dart';
+import 'diseases/Gastritis_screen.dart';
+import 'diseases/Kidney_screen.dart';
+import 'diseases/blood_pressure_screen.dart';
+import 'diseases/colon_screen.dart';
+
 class ChronicDiseases extends StatefulWidget {
   const ChronicDiseases({Key? key}) : super(key: key);
 
@@ -9,11 +16,38 @@ class ChronicDiseases extends StatefulWidget {
 }
 
 class _ChronicDiseasesState extends State<ChronicDiseases> {
+  List diseases = [
+    {
+      "image": "assets/images/12.jpeg",
+      "name": "Diabetes",
+      "screens": const DiabetesScreen()
+    }, //السكر
+    {
+      "image": "assets/images/13.jpeg",
+      "name": "Kidney Disease",
+      "screens": const KidneyScreen()
+    }, // الكلي
+    {
+      "image": "assets/images/14.jpeg",
+      "name": "Gastritis",
+      "screens": const GastritisScreen()
+    }, // المعده
+    {
+      "image": "assets/images/21.jpeg",
+      "name": "blood pressure",
+      "screens": const bloodPressureScreen()
+    }, //ضغط الدم
+    {
+      "image": "assets/images/22.jpeg",
+      "name": "colon",
+      "screens": const ColonScreen()
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xff37d461),
+        backgroundColor: greenColor,
         elevation: 0.0,
         actions: [
           IconButton(
@@ -37,37 +71,56 @@ class _ChronicDiseasesState extends State<ChronicDiseases> {
         child: Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Color(0xff37d461),
+                greenColor,
                 //Color(0xff9e3609),
-                Color(0xffc3c9c5),
+                const Color(0xffc3c9c5),
               ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
             ),
           ),
-          child: SingleChildScrollView(
-            child: Column(
-              children: const [
-                Padding(
-                  padding: EdgeInsets.all(18.0),
-                  child: Text(
-                    "It is not contagious, it is not caused by bacteria or viruses. "
-                    "The infection is usually silent, and the patient may not notice it "
-                    "until after the onset of complications, such as high blood pressure. "
-                    "They are linked to the dietary and motor behavior of individuals and societies, "
-                    "for example diabetes mellitus is associated with overweight and obesity, and respiratory "
-                    "diseases are linked to smoking.",
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
+          child: ListView.builder(
+            itemCount: diseases.length,
+            itemBuilder: (BuildContext context, int index) {
+              return InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => diseases[index]["screens"]!),
+                  );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: Container(
+                    width: 350,
+                    height: 270,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.grey[300],
+                    ),
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(diseases[index]["image"]!),
+                          Padding(
+                            padding: const EdgeInsets.all(7.0),
+                            child: Text(
+                              diseases[index]["name"]!, //السكر
+                              style: const TextStyle(fontSize: 27),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                )
-              ],
-            ),
+                ),
+              );
+            },
           ),
         ),
       ),

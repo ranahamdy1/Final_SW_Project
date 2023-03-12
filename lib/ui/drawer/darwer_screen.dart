@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sw_project1/ui/drawer/reminder.dart';
 import 'package:sw_project1/ui/drawer/connect_us.dart';
+import '../../shared/shared_screen.dart';
 import '../../tips/Home_DB.dart';
 import '../chronic_diseases/chronic_diseases_screen.dart';
 import 'about_us.dart';
@@ -13,11 +14,11 @@ import '../main_screen.dart';
 
 Widget buildHeader(BuildContext context) {
   return Material(
-    color: const Color(0xff37d461),
+    color: greenColor,
     child: InkWell(
       onTap: () {},
       child: Container(
-        color: const Color(0xff37d461),
+        color: greenColor,
         padding: EdgeInsets.only(
             top: MediaQuery.of(context).padding.top, bottom: 24),
         child: Column(
@@ -43,14 +44,14 @@ Widget buildMenuItems(BuildContext context) {
     child: Wrap(
       children: [
         ListTile(
-          leading: const Icon(
+          leading: Icon(
             Icons.home_outlined,
-            color: Color(0xff37d461),
+            color: greenColor,
             size: 39,
           ),
-          title: const Text(
+          title: Text(
             "Home",
-            style: TextStyle(fontSize: 18, color: Color(0xff37d461)),
+            style: TextStyle(fontSize: 18, color: greenColor),
           ),
           onTap: () {
             Navigator.push(context,
@@ -58,14 +59,14 @@ Widget buildMenuItems(BuildContext context) {
           },
         ),
         ListTile(
-          leading: const Icon(
+          leading: Icon(
             Icons.article_sharp,
-            color: Color(0xff37d461),
+            color: greenColor,
             size: 30,
           ),
-          title: const Text(
+          title: Text(
             "Articles",
-            style: TextStyle(fontSize: 18, color: Color(0xff37d461)),
+            style: TextStyle(fontSize: 18, color: greenColor),
           ),
           onTap: () {
             Navigator.pop(context);
@@ -74,14 +75,14 @@ Widget buildMenuItems(BuildContext context) {
           },
         ),
         ListTile(
-          leading: const Icon(
+          leading: Icon(
             Icons.calculate,
-            color: Color(0xff37d461),
+            color: greenColor,
             size: 30,
           ),
-          title: const Text(
+          title: Text(
             "PMI",
-            style: TextStyle(fontSize: 18, color: Color(0xff37d461)),
+            style: TextStyle(fontSize: 18, color: greenColor),
           ),
           onTap: () {
             Navigator.pop(context);
@@ -90,14 +91,14 @@ Widget buildMenuItems(BuildContext context) {
           },
         ),
         ListTile(
-          leading: const Icon(
+          leading: Icon(
             Icons.no_food_outlined,
-            color: Color(0xff37d461),
+            color: greenColor,
             size: 30,
           ),
-          title: const Text(
+          title: Text(
             "Calories",
-            style: TextStyle(fontSize: 18, color: Color(0xff37d461)),
+            style: TextStyle(fontSize: 18, color: greenColor),
           ),
           onTap: () {
             Navigator.pop(context);
@@ -108,14 +109,14 @@ Widget buildMenuItems(BuildContext context) {
           },
         ),
         ListTile(
-          leading: const Icon(
+          leading: Icon(
             Icons.sports_gymnastics,
-            color: Color(0xff37d461),
+            color: greenColor,
             size: 30,
           ),
-          title: const Text(
+          title: Text(
             "exercises",
-            style: TextStyle(fontSize: 18, color: Color(0xff37d461)),
+            style: TextStyle(fontSize: 18, color: greenColor),
           ),
           onTap: () {
             Navigator.pop(context);
@@ -126,14 +127,14 @@ Widget buildMenuItems(BuildContext context) {
           },
         ),
         ListTile(
-          leading: const Icon(
+          leading: Icon(
             Icons.tips_and_updates,
-            color: Color(0xff37d461),
+            color: greenColor,
             size: 30,
           ),
-          title: const Text(
+          title: Text(
             "Add Tips",
-            style: TextStyle(fontSize: 18, color: Color(0xff37d461)),
+            style: TextStyle(fontSize: 18, color: greenColor),
           ),
           onTap: () {
             Navigator.push(
@@ -143,14 +144,14 @@ Widget buildMenuItems(BuildContext context) {
           },
         ),
         ListTile(
-          leading: const Icon(
+          leading: Icon(
             Icons.timeline,
-            color: Color(0xff37d461),
+            color: greenColor,
             size: 30,
           ),
-          title: const Text(
+          title: Text(
             "Chronic Diseases",
-            style: TextStyle(fontSize: 18, color: Color(0xff37d461)),
+            style: TextStyle(fontSize: 18, color: greenColor),
           ),
           onTap: () {
             Navigator.push(
@@ -160,14 +161,14 @@ Widget buildMenuItems(BuildContext context) {
           },
         ),
         ListTile(
-          leading: const Icon(
+          leading: Icon(
             Icons.add_alert_sharp,
-            color: Color(0xff37d461),
+            color: greenColor,
             size: 30,
           ),
-          title: const Text(
+          title: Text(
             "Reminder",
-            style: TextStyle(fontSize: 18, color: Color(0xff37d461)),
+            style: TextStyle(fontSize: 18, color: greenColor),
           ),
           onTap: () {
             Navigator.pop(context);
@@ -177,19 +178,19 @@ Widget buildMenuItems(BuildContext context) {
                     builder: (context) => const ReminderScreen()));
           },
         ),
-        const Divider(
-          color: Color(0xff37d461),
+        Divider(
+          color: greenColor,
           thickness: 2,
         ),
         ListTile(
-          leading: const Icon(
+          leading: Icon(
             Icons.feedback,
-            color: Color(0xff37d461),
+            color: greenColor,
             size: 30,
           ),
-          title: const Text(
+          title: Text(
             "Feedback",
-            style: TextStyle(fontSize: 18, color: Color(0xff37d461)),
+            style: TextStyle(fontSize: 18, color: greenColor),
           ),
           onTap: () {
             Navigator.push(
@@ -199,14 +200,14 @@ Widget buildMenuItems(BuildContext context) {
           },
         ),
         ListTile(
-          leading: const Icon(
+          leading: Icon(
             Icons.call,
-            color: Color(0xff37d461),
+            color: greenColor,
             size: 30,
           ),
-          title: const Text(
+          title: Text(
             "Connect Us",
-            style: TextStyle(fontSize: 18, color: Color(0xff37d461)),
+            style: TextStyle(fontSize: 18, color: greenColor),
           ),
           onTap: () {
             Navigator.push(
@@ -216,14 +217,14 @@ Widget buildMenuItems(BuildContext context) {
           },
         ),
         ListTile(
-          leading: const Icon(
+          leading: Icon(
             Icons.people,
-            color: Color(0xff37d461),
+            color: greenColor,
             size: 30,
           ),
-          title: const Text(
+          title: Text(
             "About Us",
-            style: TextStyle(fontSize: 18, color: Color(0xff37d461)),
+            style: TextStyle(fontSize: 18, color: greenColor),
           ),
           onTap: () {
             Navigator.push(context,

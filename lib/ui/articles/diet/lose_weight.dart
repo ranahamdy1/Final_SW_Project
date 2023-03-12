@@ -8,6 +8,53 @@ class LoseWeightScreen extends StatefulWidget {
 }
 
 class _LoseWeightScreenState extends State<LoseWeightScreen> {
+  List list = [
+    {
+      "week": "First week:",
+      "Breakfast": "Breakfast:",
+      "BreakfastBody": "2 boiled eggs - a loaf of toast - a cup of green tea.",
+      "Lunch": "Lunch:",
+      "LunchBody":
+          "grilled or boiled chicken breast - 3 tablespoons of rice - a large mixed salad dish.",
+      "Dinner": "Dinner:",
+      "DinnerBody":
+          " a large cup of fat-free yogurt - flaxseed - a large mixed salad plate - two fruits of your choice.",
+    },
+    {
+      "week": "second week:",
+      "Breakfast": "Breakfast:",
+      "BreakfastBody":
+          "a loaf of toast - a cup of milk, provided that it is fat-free and without sugar - a fruit of your choice - a cup of green tea.",
+      "Lunch": "Lunch:",
+      "LunchBody":
+          "a can of tuna without oil - a large mixed salad dish - two fruits of your choice.",
+      "Dinner": "Dinner:",
+      "DinnerBody": " vegetable soup without broth - a cup of fat-free yogurt.",
+    },
+    {
+      "week": "third week:",
+      "Breakfast": "Breakfast:",
+      "BreakfastBody":
+          "a piece of cottage cheese - two cucumbers - 4 tablespoons of beans without oil.",
+      "Lunch": "Lunch:",
+      "LunchBody":
+          "two grilled fish - a large mixed salad dish - 3 tablespoons of rice or pasta - pineapple juice without sugar.",
+      "Dinner": "Dinner:",
+      "DinnerBody": "a plate of vegetable soup only.",
+    },
+    {
+      "week": "fourth week:",
+      "Breakfast": "Breakfast:",
+      "BreakfastBody":
+          "a cup of fat-free yogurt - flax seeds - a loaf of toast - 5 nuts - one grapefruit.",
+      "Lunch": "Lunch:",
+      "LunchBody": " lentil soup without meat - two cucumbers.",
+      "Dinner": "Dinner:",
+      "DinnerBody":
+          "a loaf of bread on toast - a plate of yogurt salad with cucumber added.",
+    }
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +72,8 @@ class _LoseWeightScreenState extends State<LoseWeightScreen> {
       ),
       body: SafeArea(
         child: Container(
+          width: double.infinity,
+          height: double.infinity,
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
@@ -36,28 +85,21 @@ class _LoseWeightScreenState extends State<LoseWeightScreen> {
               end: Alignment.bottomCenter,
             ),
           ),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    "The best weight loss diet without a gym to lose 20 kilos in a month",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
-                  ),
-                ),
-                Column(
-                  children: const [
+          child: ListView.builder(
+              itemCount: list.length,
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
                     Text(
-                      "First week:",
-                      style: TextStyle(
+                      list[index]["week"]!,
+                      style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 25,
                           color: Color(0xff0a5e1f)),
                     ),
                     Text(
-                      "Breakfast:",
-                      style: TextStyle(
+                      list[index]["Breakfast"]!,
+                      style: const TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                           color: Colors.green),
@@ -65,16 +107,16 @@ class _LoseWeightScreenState extends State<LoseWeightScreen> {
                     Padding(
                       padding: EdgeInsets.all(18.0),
                       child: Text(
-                        "2 boiled eggs - a loaf of toast - a cup of green tea.",
-                        style: TextStyle(
+                        list[index]["BreakfastBody"]!,
+                        style: const TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
                             color: Colors.white),
                       ),
                     ),
                     Text(
-                      "Lunch:",
-                      style: TextStyle(
+                      list[index]["Lunch"]!,
+                      style: const TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                           color: Colors.green),
@@ -82,221 +124,33 @@ class _LoseWeightScreenState extends State<LoseWeightScreen> {
                     Padding(
                       padding: EdgeInsets.all(18.0),
                       child: Text(
-                        "grilled or boiled chicken breast - 3 tablespoons of rice - a large mixed salad dish.",
-                        style: TextStyle(
+                        list[index]["LunchBody"]!,
+                        style: const TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
                             color: Colors.white),
                       ),
                     ),
                     Text(
-                      "Dinner:",
-                      style: TextStyle(
+                      list[index]["Dinner"]!,
+                      style: const TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                           color: Colors.green),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(18.0),
+                      padding: const EdgeInsets.all(18.0),
                       child: Text(
-                        " a large cup of fat-free yogurt - flaxseed - a large mixed salad plate - two fruits of your choice.",
-                        style: TextStyle(
+                        list[index]["DinnerBody"]!,
+                        style: const TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
                             color: Colors.white),
                       ),
                     ),
                   ],
-                ),
-                Column(
-                  children: const [
-                    Text(
-                      "second week:",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                          color: Color(0xff0a5e1f)),
-                    ),
-                    Text(
-                      "Breakfast:",
-                      style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.green),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(18.0),
-                      child: Text(
-                        "a loaf of toast - a cup of milk, provided that it is fat-free and without sugar - a fruit of your choice - a cup of green tea.",
-                        style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
-                    ),
-                    Text(
-                      "Lunch:",
-                      style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.green),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(18.0),
-                      child: Text(
-                        "a can of tuna without oil - a large mixed salad dish - two fruits of your choice.",
-                        style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
-                    ),
-                    Text(
-                      "Dinner:",
-                      style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.green),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(18.0),
-                      child: Text(
-                        "Dinner: vegetable soup without broth - a cup of fat-free yogurt.",
-                        style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: const [
-                    Text(
-                      "the third week: ",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                          color: Color(0xff0a5e1f)),
-                    ),
-                    Text(
-                      "Breakfast:",
-                      style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.green),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(18.0),
-                      child: Text(
-                        "a piece of cottage cheese - two cucumbers - 4 tablespoons of beans without oil.",
-                        style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
-                    ),
-                    Text(
-                      "Lunch:",
-                      style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.green),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(18.0),
-                      child: Text(
-                        "two grilled fish - a large mixed salad dish - 3 tablespoons of rice or pasta - pineapple juice without sugar.",
-                        style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
-                    ),
-                    Text(
-                      "Dinner:",
-                      style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.green),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(18.0),
-                      child: Text(
-                        "a plate of vegetable soup only.",
-                        style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: const [
-                    Text(
-                      "fourth week: ",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                          color: Color(0xff0a5e1f)),
-                    ),
-                    Text(
-                      "Breakfast:",
-                      style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.green),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(18.0),
-                      child: Text(
-                        "a cup of fat-free yogurt - flax seeds - a loaf of toast - 5 nuts - one grapefruit.",
-                        style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
-                    ),
-                    Text(
-                      "Lunch:",
-                      style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.green),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(18.0),
-                      child: Text(
-                        " lentil soup without meat - two cucumbers.",
-                        style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
-                    ),
-                    Text(
-                      "Dinner:",
-                      style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.green),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(18.0),
-                      child: Text(
-                        "a loaf of bread on toast - a plate of yogurt salad with cucumber added.",
-                        style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
+                );
+              }),
         ),
       ),
     );

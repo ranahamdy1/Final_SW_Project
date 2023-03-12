@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/shared_screen.dart';
+
 class FoodScreen extends StatefulWidget {
   const FoodScreen({Key? key}) : super(key: key);
 
@@ -12,7 +14,7 @@ class _FoodScreenState extends State<FoodScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xff37d461),
+        backgroundColor: greenColor,
         elevation: 0.0,
         leading: IconButton(
             onPressed: () {
@@ -27,12 +29,12 @@ class _FoodScreenState extends State<FoodScreen> {
         child: Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Color(0xff37d461),
+                greenColor,
                 //Color(0xff9e3609),
-                Color(0xffc3c9c5),
+                const Color(0xffc3c9c5),
               ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
