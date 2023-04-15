@@ -23,6 +23,11 @@ class _ChronicDiseasesState extends State<ChronicDiseases> {
       "screens": const DiabetesScreen()
     }, //السكر
     {
+      "image": "assets/images/21.jpeg",
+      "name": "blood pressure",
+      "screens": const bloodPressureScreen()
+    }, //ضغط الدم
+    {
       "image": "assets/images/13.jpeg",
       "name": "Kidney Disease",
       "screens": const KidneyScreen()
@@ -32,11 +37,6 @@ class _ChronicDiseasesState extends State<ChronicDiseases> {
       "name": "Gastritis",
       "screens": const GastritisScreen()
     }, // المعده
-    {
-      "image": "assets/images/21.jpeg",
-      "name": "blood pressure",
-      "screens": const bloodPressureScreen()
-    }, //ضغط الدم
     {
       "image": "assets/images/22.jpeg",
       "name": "colon",
@@ -106,7 +106,10 @@ class _ChronicDiseasesState extends State<ChronicDiseases> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.asset(diseases[index]["image"]!),
+                          Padding(
+                            padding: const EdgeInsets.all(11.0),
+                            child: Image.asset(diseases[index]["image"]!),
+                          ),
                           Padding(
                             padding: const EdgeInsets.all(7.0),
                             child: Text(

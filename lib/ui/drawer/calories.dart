@@ -128,7 +128,7 @@ class _CaloriesScreenState extends State<CaloriesScreen> {
   }
 
   void calculateCaloriesWoman(double weight) {
-    double finalResult = (weight * 0.9 * 24); // (/10000)
+    double finalResult = (weight * 0.9 * 24);
     String calories = finalResult.toStringAsFixed(2);
     setState(() {
       result = calories;
@@ -136,7 +136,7 @@ class _CaloriesScreenState extends State<CaloriesScreen> {
   }
 
   void calculateCaloriesMan(double weight) {
-    double finalResult = (weight * 1.0 * 24); // (/10000)
+    double finalResult = (weight * 1.0 * 24);
     String calories = finalResult.toStringAsFixed(2);
     setState(() {
       result = calories;

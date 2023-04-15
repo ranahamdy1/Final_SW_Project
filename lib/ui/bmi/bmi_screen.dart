@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import '../../shared/shared_screen.dart';
-import 'factory_pmi.dart';
 
 class BmiScreen extends StatefulWidget {
   const BmiScreen({Key? key}) : super(key: key);

@@ -1,6 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-import '../../shared/shared_screen.dart';
+class ExercisesScreen extends StatefulWidget {
+  const ExercisesScreen({Key? key}) : super(key: key);
+
+  @override
+  State<ExercisesScreen> createState() => _ExercisesScreenState();
+}
+
+class _ExercisesScreenState extends State<ExercisesScreen> {
+  final YoutubePlayerController youtubePlayerController =
+      YoutubePlayerController(
+          initialVideoId: YoutubePlayer.convertUrlToId(
+              "https://www.youtube.com/watch?v=ziOpBWFPlyI")!);
+  @override
+  Widget build(BuildContext context) {
+    return YoutubePlayerBuilder(
+      player: YoutubePlayer(
+        controller: youtubePlayerController,
+      ),
+      builder: (context, player) {
+        return Center(
+          child: Column(
+            children: [player],
+          ),
+        );
+      },
+    );
+  }
+}
+
+/*import '../../shared/shared_screen.dart';
 
 class ExercisesScreen extends StatefulWidget {
   const ExercisesScreen({Key? key}) : super(key: key);
@@ -41,4 +71,4 @@ class _ExercisesScreenScreenState extends State<ExercisesScreen> {
       ),
     );
   }
-}
+}*/

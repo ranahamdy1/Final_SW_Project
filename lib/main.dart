@@ -2,7 +2,6 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:sw_project1/tips/Home_DB.dart';
 import 'package:sw_project1/ui/start_screen.dart';
-
 import 'database/sqflite/addtips.dart';
 import 'package:firebase_core/firebase_core.dart';
 

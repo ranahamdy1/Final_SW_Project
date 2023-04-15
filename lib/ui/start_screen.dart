@@ -38,7 +38,7 @@ class StartScreen extends StatelessWidget {
                 },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
-                    greenColor,
+                    const Color(0xff82b891),
                   ),
                   padding: MaterialStateProperty.all(
                       const EdgeInsets.symmetric(horizontal: 66, vertical: 10)),
